@@ -1,0 +1,23 @@
+
+// Exercice second degre
+Programme SECOND DEGRE
+
+// Variable utiliser pour equation du second degre
+Variable ENTIER a
+Variable ENTIER b
+Variable ENTIER c
+Variable REEL resultat
+
+// Définition des actions du bloc
+DEBUT
+	a = lireEntier()
+	b = lireEntier()
+	c = lireEntier()
+
+	SI a, b, et c < 0 FAIRE
+		ecrire "il faut saisir des nombre positive"
+	SINON a, b et c > 0 FAIRE
+		resultat = ax² + bx + c
+		return resultat
+	FIN SI
+FIN

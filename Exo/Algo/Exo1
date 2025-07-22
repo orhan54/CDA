@@ -1,0 +1,65 @@
+
+// Exercice avec la boucle TANT QUE
+Programme TANT QUE (N)
+
+// Variable utiliser pour exercice 1 avec la boucle TANT QUE
+Variable ENTIER N
+Variable ENTIER resultat
+DEBUT
+    ecrire "saisir un nombre positif ou 0 pour terminer le programme"
+    N = lireEntier()
+    SI N < 0 FAIRE
+        ecrire "Le nombre dois etre positive"
+    SINON SI N = 0 FAIRE
+        ecrire "fin du programme"
+    SINON FAIRE
+        resultat = N
+    FIN SINON
+    ecrire(<<Le resultat avec TANT QUE est: >>, resultat)    
+FIN
+
+===========================================================================
+
+// Exercice avec la boucle POUR
+Programme POUR
+
+// Variable utiliser pour exercice 1 avec la boucle POUR
+Variable ENTIER N
+Variable ENTIER i
+Variable ENTIER resultat
+
+// Définition des actions du bloc
+DEBUT
+    N = lireEntier()
+    SI N < 0 FAIRE
+        ecrire "le nombre dois etre positive"
+    SINON FAIRE
+        POUR i ALLANT_DE N A i FAIRE    
+        resultat = N + i
+        i++
+    FIN SINON
+    ecrire (<< Le resultat avec POUR est: >>, resultat)
+FIN
+============================================================================
+
+// Exercice avec la boucle REPETER
+Programme REPETER
+
+// Variable utiliser pour exercice 1 avec la boucle REPETER
+Variable ENTIER N
+Variable Entier arret
+Variable ENTIER resultat
+
+// Définition des actions du bloc
+DEBUT
+    ecrire "saisir un nombre positif ou 0 pour terminer le programme"
+    N = lireEntier()
+    REPETER
+        SI N < 0 FAIRE
+            ecrire "le nombre dois etre positive"
+            N = lireEntier()
+        SINON
+            resultat = resultat + N
+    JUSQU A N = 0
+    ecrire(<<Le resultat avec REPETER est: >>, resultat)
+FIN
