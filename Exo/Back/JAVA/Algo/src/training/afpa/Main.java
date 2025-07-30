@@ -31,6 +31,9 @@ public class Main {
         //equation.equationSecondDegre();
 
         Exo4 e = new Exo4();
-        e.sommePuissance();
+        //e.sommePuissance();
+
+        Exo5 r = new Exo5();
+        r.creationTabent();
     }
 }
