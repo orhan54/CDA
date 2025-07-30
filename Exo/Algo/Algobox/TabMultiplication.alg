@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="" courant="SI (j &lt; 21) ALORS"/>
+    <description texte="" courant="AFFICHER &quot; |&quot;"/>
     <extension extnom="inactif"/>
     <fonction fctetat="inactif" fctcode=""/>
     <F2 F2para="" F2defaut="" F2lignes="" F2etat="inactif"/>
