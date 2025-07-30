@@ -34,6 +34,9 @@ public class Main {
         //e.sommePuissance();
 
         Exo5 r = new Exo5();
-        r.creationTabent();
+        //r.creationTabent();
+
+        Exo6 tabMatrix = new Exo6();
+        //tabMatrix.remplissageTab();
     }
 }
