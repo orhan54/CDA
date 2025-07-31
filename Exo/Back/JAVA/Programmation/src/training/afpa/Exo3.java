@@ -12,30 +12,39 @@ public class Exo3 {
     int nombreNuls;
     int moyennePositifs;
     int moyenneNegatifs;
-    int saisie;
 
-    public void afficherTableau() {
-        for (int i = 0; i < tableauEntiers.length; i++) {
-            tableauEntiers[i] = i;
+    public void insertValeur() {
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < tailleMax; i++) {
+            System.out.print("Entrez entier n° " + (i + 1) + " : ");
+            tableauEntiers[i] = sc.nextInt();
         }
     }
 
-    public void analyseTableau(int[] tableauEntiers) {
+    public void afficherTableau() {
+        System.out.print("Contenu du tableau : ");
+        for (int val : tableauEntiers) {
+            System.out.print(val + " ");
+        }
+        System.out.println();
+    }
+
+    public void analyseTableau() {
         nombrePositifs = 0;
         sommePositifs = 0;
         nombreNegatifs = 0;
         sommeNegatifs = 0;
         nombreNuls = 0;
 
-        for (int i = 0; i < tableauEntiers.length - 1; i++) {
-            if (tableauEntiers[i] > nombrePositifs + 1) {
-                nombrePositifs = nombreNegatifs + 1;
-                sommePositifs = sommeNegatifs + tableauEntiers[i];
-            } else if (tableauEntiers[i] < 0) {
-                nombreNegatifs = nombreNegatifs + 1;
-                sommeNegatifs = sommeNegatifs + tableauEntiers[i];
+        for (int val : tableauEntiers) {
+            if (val > 0) {
+                nombrePositifs++;
+                sommePositifs += val;
+            } else if (val < 0) {
+                nombreNegatifs++;
+                sommeNegatifs += val;
             } else {
-                nombreNuls = nombreNuls + 1;
+                nombreNuls++;
             }
         }
     }
@@ -53,21 +62,8 @@ public class Exo3 {
             moyenneNegatifs = 0;
         }
 
-        System.out.println("Nombre d'entiers positifs : " + nombrePositifs + " moyenne : " + moyennePositifs);
-        System.out.println("Nombre d'entiers negatifs : " + nombreNegatifs + " moyenne : " + moyenneNegatifs);
-        System.out.println("Nombre d'entiers nulles : " + nombreNuls);
-    }
-
-    public void getTailleMax() {
-        for(int i=0; i<tailleMax-1; i++) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Entrez entier n° " + i + " (positif, négatif ou nul) : ");
-            saisie = sc.nextInt();
-            tableauEntiers[i] = saisie;
-        }
-
-        System.out.println("Taille max : " + tailleMax);
-
-        analyseTableau(tableauEntiers);
+        System.out.println("Nombre positifs : " + nombrePositifs + ", moyenne : " + moyennePositifs);
+        System.out.println("Nombre négatifs : " + nombreNegatifs + ", moyenne : " + moyenneNegatifs);
+        System.out.println("Nombre de zéros : " + nombreNuls);
     }
 }

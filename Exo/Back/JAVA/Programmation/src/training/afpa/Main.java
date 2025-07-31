@@ -12,7 +12,15 @@ public class Main {
         //e2.remplirTab();
 
         Exo3 e3 = new Exo3();
-        e3.getTailleMax();
+        //e3.insertValeur();
+        //e3.afficherTableau();
+        //e3.analyseTableau();
+        //e3.calculerMoyenne();
+
+        Exo4 e4 = new Exo4();
+        //e4.remplirTab();
+
+
 
 
     }
