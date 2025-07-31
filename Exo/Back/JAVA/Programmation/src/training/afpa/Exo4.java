@@ -58,6 +58,7 @@ public class Exo4 {
             String reponse  = sc.nextLine();
             if(reponse.equals("Non")){
                 continuer = false;
+                sc.close();
                 System.exit(0);
             }
 
