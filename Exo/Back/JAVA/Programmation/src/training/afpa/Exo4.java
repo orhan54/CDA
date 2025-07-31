@@ -1,5 +1,6 @@
 package training.afpa;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exo4 {
@@ -48,8 +49,8 @@ public class Exo4 {
             }while(Y <= 1 && Y >= 9);
 
             //afficher le produit
-            int[] produit = new int[tabMulti[X][Y]];
-            System.out.println("Le resultat de " + X + " * " + Y + " = " + (X * Y));
+            int produit = tabMulti[X][Y];
+            System.out.println("Le resultat de " + X + " * " + Y + " = " + produit );
 
             // demander si l'utilisateur souhaite continuer
             System.out.println("Souhaitez-vous enocre un calcul ? (Oui/Non)");

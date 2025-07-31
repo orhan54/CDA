@@ -18,7 +18,7 @@ public class Main {
         //e3.calculerMoyenne();
 
         Exo4 e4 = new Exo4();
-        //e4.remplirTab();
+        e4.remplirTab();
 
 
 
