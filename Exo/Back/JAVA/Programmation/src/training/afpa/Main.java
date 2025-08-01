@@ -21,7 +21,10 @@ public class Main {
         //e4.remplirTab();
 
         Exo5 e5 = new Exo5();
-        e5.exProgramme();
+        //e5.exProgramme();
+
+        Exo6 e6 = new Exo6();
+        e6.programme6();
 
 
 
