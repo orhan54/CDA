@@ -26,9 +26,6 @@ public class Main {
         Exo6 e6 = new Exo6();
         e6.programme6();
 
-
-
-
     }
 }
 

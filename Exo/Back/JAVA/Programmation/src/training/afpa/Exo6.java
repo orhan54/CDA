@@ -1,29 +1,27 @@
 package training.afpa;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exo6 {
-    int[] tableau;
 
-    public void afficherTableau(int []tableau) {
-        for(int i=0; i<tableau.length; i++) {
-            System.out.print("   n°" + (i+1) + ": " +  tableau[i] + "   ");
+    public void afficherTableau(int[] tableau) {
+        for (int i = 0; i < tableau.length; i++) {
+            System.out.print("   n°" + (i + 1) + ": " + tableau[i] + "   ");
         }
         System.out.println(" ");
     }
 
-    public void trierTableau(int []tableau) {
-        boolean permuter;
+    public void trierTableau(int[] tableau, boolean ordreCroissant) {
         int n = tableau.length;
         int temp;
 
-        for(int i=0; i<n-1; i++) {
-            for(int j=i+1; j<n; j++) {
-                if(tableau[j]>tableau[j+1]) {
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - 1 - i; j++) {
+                if ((ordreCroissant && tableau[j] > tableau[j + 1]) ||
+                        (!ordreCroissant && tableau[j] < tableau[j + 1])) {
                     temp = tableau[j];
-                    tableau[j] = tableau[j+1];
-                    tableau[j+1] = temp;
+                    tableau[j] = tableau[j + 1];
+                    tableau[j + 1] = temp;
                 }
             }
         }
@@ -34,38 +32,30 @@ public class Exo6 {
         int[] tableauEntiers = new int[taille];
         boolean ordreCroissant;
 
+        // Remplir le tableau avec des valeurs aléatoires
+        for (int i = 0; i < tableauEntiers.length; i++) {
+            tableauEntiers[i] = (int) (Math.random() * (50 - (-50) + 1)) + (-50);
+        }
 
         // Afficher le tableau non trié
-        System.out.println("Tableau non trié : ");
+        System.out.println("Tableau non trié :");
+        afficherTableau(tableauEntiers);
 
-        // Remplir le tableau avec des valeurs aléatoires
-        for(int i=0; i<tableauEntiers.length; i++) {
-            tableauEntiers[i] =(int) (Math.random() * (50 - (-50) + 1)) + (-50);
-            System.out.print("   n°" + (i+1) + ": " + tableauEntiers[i] + "   ");
-        }
-
-        System.out.println(" ");
-
-        System.out.println("Voulez-vous trier le tableau dans l'ordre croissant ? (Oui/Non)");
+        // Choix de l'utilisateur
         Scanner sc = new Scanner(System.in);
-        String reponse = sc.nextLine();
+        System.out.println("Voulez-vous trier le tableau dans l'ordre croissant ? (Oui/Non)");
+        String reponse = sc.nextLine().trim();
 
-        if(reponse.equals("Oui")) {
-            ordreCroissant = true;
-        }else{
-            ordreCroissant = false;
-        }
+        ordreCroissant = reponse.equalsIgnoreCase("Oui");
 
-        //trier le tableau
-        trierTableau(tableau);
+        // Trier le tableau selon le choix
+        trierTableau(tableauEntiers, ordreCroissant);
 
-        //afficher  le tableau trjié
-        System.out.println("Tableau trié :");
+        // Afficher le tableau trié
+        System.out.println("Tableau trié " + (ordreCroissant ? "par ordre croissant" : "par ordre décroissant") + " :");
         afficherTableau(tableauEntiers);
 
         System.out.println("Fin du programme !");
         sc.close();
-
     }
-
 }
