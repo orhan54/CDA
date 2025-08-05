@@ -2,6 +2,8 @@ package training.afpa.metier.exosCours;
 
 import training.afpa.utility.InputAndDisplay;
 
+import static training.afpa.utility.InputAndDisplay.getInt;
+
 /**
  * @author jboebion
  */
@@ -14,7 +16,7 @@ public class Average {
 		
 		result = 0;
 		for(int i=0; i<= 8; i++) {
-			notes[i] = InputAndDisplay.getInt("Ecrire une notes n°" + i + ": ");
+			notes[i] = getInt("Ecrire une notes n°" + i + ": ");
 			result = result + notes[i];
 		}
 		
