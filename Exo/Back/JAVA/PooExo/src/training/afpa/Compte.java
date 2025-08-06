@@ -21,7 +21,11 @@ public class Compte {
 
         //methode retirer
         public void Retirer(int retirer) {
-            solde -= retirer;
+            if(this.solde >= retirer) {
+                this.solde -= retirer;
+            }else{
+                System.out.println("Retrait impossible");
+            }
             System.out.println("Vôtre nouveau solde est de : " + solde +"€");
         }
 
