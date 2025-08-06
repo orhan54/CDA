@@ -1,4 +1,4 @@
-package training.afpa;
+package training.afpa.Exo1;
 
 public class Compte {
 
@@ -15,13 +15,13 @@ public class Compte {
 
         //methode deposer
         public void Deposer(int versement) {
-            solde += versement;
-            System.out.println("Votre compte a un solde de : " + solde +"€");
+            this.solde += versement;
+            System.out.println("Vôtre compte a un solde de : " + solde +"€");
         }
 
         //methode retirer
         public void Retirer(int retirer) {
-            solde -= retirer;
+            this.solde -= retirer;
             System.out.println("Vôtre nouveau solde est de : " + solde +"€");
         }
 
