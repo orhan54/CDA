@@ -1,4 +1,6 @@
-package training.afpa;
+package training.afpa.main;
+
+import training.afpa.Exo1.TestCompte;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -6,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         TestCompte testCompte = new TestCompte();
-        testCompte.Operation();
+        //testCompte.Operation();
 
     }
 }

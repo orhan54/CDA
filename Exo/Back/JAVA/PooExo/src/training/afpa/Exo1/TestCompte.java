@@ -1,4 +1,4 @@
-package training.afpa;
+package training.afpa.Exo1;
 
 import java.util.Scanner;
 
