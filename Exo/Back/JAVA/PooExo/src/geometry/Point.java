@@ -11,15 +11,6 @@ public class Point {
         this.ordonnee = ordonnee;
     }
 
-    public class Cercle {
-        private int centre;
-        private double rayon;
-
-        public Cercle(int centre, double rayon) {
-            this.centre = centre;
-            this.rayon = rayon;
-        }
-    }
 
     public double getAbscisse() {
         return this.abscisse;

@@ -21,15 +21,11 @@ public class Compte {
 
         //methode retirer
         public void Retirer(int retirer) {
-<<<<<<< HEAD:Exo/Back/JAVA/PooExo/src/training/afpa/Compte.java
             if(this.solde >= retirer) {
                 this.solde -= retirer;
             }else{
                 System.out.println("Retrait impossible");
             }
-=======
-            this.solde -= retirer;
->>>>>>> ba538ab8d34882d6f869867b37a82bd9f4ecfc93:Exo/Back/JAVA/PooExo/src/training/afpa/Exo1/Compte.java
             System.out.println("Vôtre nouveau solde est de : " + solde +"€");
         }
 
