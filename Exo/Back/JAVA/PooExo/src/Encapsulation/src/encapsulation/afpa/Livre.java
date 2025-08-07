@@ -1,6 +1,6 @@
 package encapsulation.afpa;
 
-public class Exo1 {
+public class Livre {
 
     //variable
     private String titre, auteur;
@@ -8,18 +8,18 @@ public class Exo1 {
     private int nbPagesTotals;
 
     //constructeur par defaut
-    public Exo1() {
+    public Livre() {
     }
 
     //constructeur
-    public Exo1(String titre, String auteur, int nbPages) {
+    public Livre(String titre, String auteur, int nbPages) {
         this.auteur = auteur;
         this.titre = titre;
         this.nbPages = nbPages;
     }
 
     //constructeur pour nombre total de page
-    public Exo1(int nbPages) {
+    public Livre(int nbPages) {
         this.nbPagesTotals += nbPages;
     }
 
