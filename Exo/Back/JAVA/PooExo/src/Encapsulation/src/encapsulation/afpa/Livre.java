@@ -11,11 +11,17 @@ public class Livre {
     public Livre() {
     }
 
-    //constructeur
+    //constructeur avec titre auteur et pages
     public Livre(String titre, String auteur, int nbPages) {
         this.auteur = auteur;
         this.titre = titre;
         this.nbPages = nbPages;
+    }
+
+    //constructeur avec titre et auteur
+    public Livre(String titre, String auteur) {
+        this.auteur = auteur;
+        this.titre = titre;
     }
 
     //constructeur pour nombre total de page
@@ -54,6 +60,10 @@ public class Livre {
         System.out.println("Titre : " + this.getTitre());
         System.out.println("Auteur : " + this.getAuteur());
         System.out.println("Nombre de Pages : " + this.getNbPages());
+    }
+
+    public void afficheToi() {
+
     }
 
     public void nbPagesTotals() {
