@@ -9,9 +9,10 @@ public class Main {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
 
-            String titre;
-            String auteur;
-            int nbPages;
+            String titre = "";
+            String auteur = "";
+            int nbPages = 0;
+            int nbPagesTotals = 0;
             int nbLivre;
 
             System.out.print("Combien de livres à rentrer : ");
@@ -33,17 +34,35 @@ public class Main {
                     auteur = sc.nextLine();
 
                     System.out.print("Saisir le nombre de pages du livre n°" + i + ": ");
-                    nbPages = sc.nextInt();
+
+                    //fonction pour la saisie positif des pages entre 1 et 300
+                    do {
+                        nbPages = sc.nextInt();
+
+                        if (nbPages < 1 || nbPages > 100) {
+                            //message d'erreur en de non respect de la condition do...while
+                            System.out.println("Votre livre dois contenir entre 1 et 100 pages.");
+                        }
+                    }while (nbPages < 1 || nbPages > 100);
+                    nbPagesTotals += nbPages;
                     sc.nextLine();
+
 
                     System.out.println("");
                     System.out.println("==========================================================================");
                     System.out.println("[*** Description complete du livre entree n°" + i + " ***]");
 
+
                     Exo1 ex1 = new Exo1(titre, auteur, nbPages);
                     ex1.afficher();
                     System.out.println("==========================================================================");
                 }
+                System.out.println("");
+                System.out.println("");
+                //affichage du nombre des pages totals des livres
+                System.out.println("[*** Voici le nombre totals des pages des livres : " + nbPagesTotals + " pages ***]");
+                System.out.println("Fin du programme !!");
+                System.out.println("");
             }
 
             sc.close();
