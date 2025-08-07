@@ -1,5 +1,6 @@
 package encapsulation.afpa;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -14,8 +15,10 @@ public class Main {
         int nbPages = 0;
         int nbPagesTotals = 0;
         int nbLivre;
+        ArrayList<Integer> livres = new ArrayList<Integer>();
 
         System.out.print("Combien de livres à rentrer : ");
+
         nbLivre = sc.nextInt();
         sc.nextLine(); // Pour consommer le \n restant après nextInt()
 
@@ -38,12 +41,12 @@ public class Main {
                 //fonction pour la saisie positif des pages entre 1 et 300
                 do {
                     nbPages = sc.nextInt();
-
                     if (nbPages < 1 || nbPages > 100) {
                         //message d'erreur en de non respect de la condition do...while
                         System.out.println("Votre livre dois contenir entre 1 et 100 pages.");
                     }
                 }while (nbPages < 1 || nbPages > 100);
+                livres.add(nbPages);
                 nbPagesTotals += nbPages;
                 sc.nextLine();
 
@@ -59,6 +62,11 @@ public class Main {
             }
             System.out.println("");
             System.out.println("");
+
+            //affichage de chaque livre et de son nombre de page
+            for (int i = 0; i <= livres.toArray().length-1; i++) {
+                System.out.println("Le livre n°" + (i+1) + " contient " +  livres.get(i) + " pages");
+            }
             //affichage du nombre des pages totals des livres
             System.out.println("[*** Voici le nombre totals des pages des livres : " + nbPagesTotals + " pages ***]");
             System.out.println("Fin du programme !!");
