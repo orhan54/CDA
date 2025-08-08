@@ -1,4 +1,4 @@
 package Personne;
 
-public class Person {
+public class Personne {
 }

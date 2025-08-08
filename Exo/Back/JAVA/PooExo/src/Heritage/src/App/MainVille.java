@@ -1,6 +1,6 @@
 package App;
 
-public class MainPersonne {
+public class MainVille {
     public static void main(String[] args) {
 
     }
