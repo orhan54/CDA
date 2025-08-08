@@ -6,6 +6,8 @@ public class Livre {
     private String titre, auteur;
     private int nbPages;
     private int nbPagesTotals;
+    private double prix;
+    boolean prixFixe;
 
     //constructeur par defaut
     public Livre() {
@@ -29,6 +31,12 @@ public class Livre {
         this.nbPagesTotals += nbPages;
     }
 
+    //constructeur pour le prix
+    public Livre(double prix, String titre) {
+        this.prix = prix;
+        this.titre = titre;
+    }
+
     //Accesseur
     public String getTitre() {
         return this.titre;
@@ -40,6 +48,10 @@ public class Livre {
 
     public int getNbPages() {
         return this.nbPages;
+    }
+
+    public double getPrix() {
+        return this.prix;
     }
 
 
@@ -56,14 +68,33 @@ public class Livre {
         this.nbPages = nbPages;
     }
 
+    public void setPrix(double prix) {
+        if (prix < 0) {
+            System.out.println("Impossible de saisir un prix negatif : ");
+        } else if (!prixFixe) {
+            this.prix = prix;
+            prixFixe = true;
+        }else{
+            System.out.println("Impossible de modifier un prix deja entree : ");
+        }
+    }
+
+
+
     public void afficher() {
         System.out.println("Titre : " + this.getTitre());
         System.out.println("Auteur : " + this.getAuteur());
-        System.out.println("Nombre de Pages : " + this.getNbPages());
+        System.out.println("Nombre de Pages : " + this.getNbPages() + " pages");
+    }
+
+    public void afficherPrix() {
+        System.out.println("Le livre " + this.getTitre() + " coute : " + this.getPrix() + "€");
     }
 
     public void afficheToi() {
-
+        this.titre = getTitre();
+        this.auteur = getAuteur();
+        this.nbPages = getNbPages();
     }
 
     public void nbPagesTotals() {

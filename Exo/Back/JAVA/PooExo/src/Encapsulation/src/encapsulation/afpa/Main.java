@@ -15,6 +15,7 @@ public class Main {
         int nbPages = 0;
         int nbPagesTotals = 0;
         int nbLivre;
+        double prix;
         ArrayList<Integer> livres = new ArrayList<Integer>();
 
         System.out.print("Combien de livres à rentrer : ");
@@ -30,17 +31,21 @@ public class Main {
                 System.out.println("");
                 System.out.println("*** Saisir les informations complete du livre n°" + i + " ***");
 
-                System.out.print("Saisir le titre du livre n°" + i + ": ");
+                System.out.println("Saisir le titre du livre n°" + i + ": ");
                 titre = sc.nextLine();
 
-                System.out.print("Saisir l'auteur du livre n°" + i + ": ");
+                System.out.println("Saisir l'auteur du livre n°" + i + ": ");
                 auteur = sc.nextLine();
 
-                System.out.print("Saisir le nombre de pages du livre n°" + i + ": ");
+                System.out.println("Saisir le nombre de pages du livre n°" + i + ": ");
+                nbPages = sc.nextInt();
+
+                System.out.print("Saisir le prix du livre : ");
+                prix = sc.nextDouble();
+                System.out.println("");
 
                 //fonction pour la saisie positif des pages entre 1 et 300
                 do {
-                    nbPages = sc.nextInt();
                     if (nbPages < 1 || nbPages > 100) {
                         //message d'erreur en de non respect de la condition do...while
                         System.out.println("Votre livre dois contenir entre 1 et 100 pages.");
@@ -50,6 +55,20 @@ public class Main {
                 nbPagesTotals += nbPages;
                 sc.nextLine();
 
+                Livre setPrixLivre = new Livre(prix, titre);
+                if(prix<0){
+                    System.out.println("Prix invalide.");
+                    prix = sc.nextDouble();
+                } else if (prix>0) {
+                    //set
+                    setPrixLivre.setPrix(prix);
+                    setPrixLivre.getTitre();
+                    System.out.println("Le livre avec titre " + setPrixLivre.getTitre() + " coute " + setPrixLivre.getPrix() + "€");
+                }
+
+                System.out.println("Voici le prix du livre " + setPrixLivre.getPrix() + "€");
+
+                //setPrixLivre.setPrix(10.2); // ligne pour tester erreur en cas de modif du prix
 
                 System.out.println("");
                 System.out.println("==========================================================================");
@@ -58,6 +77,8 @@ public class Main {
 
                 Livre ex1 = new Livre(titre, auteur, nbPages);
                 ex1.afficher();
+                Livre prixLivre = new Livre(prix, titre);
+                prixLivre.afficherPrix();
                 System.out.println("==========================================================================");
             }
             System.out.println("");

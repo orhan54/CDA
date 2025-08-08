@@ -12,7 +12,7 @@ public class TestLivre {
         String auteur = "";
         String titre = "";
         System.out.println("Saisir le nombre de livre a produire : ");
-        int nbLivre;
+        int nbLivre = 1;
         int nbLivreProduit = sc.nextInt();
 
         //constructeur par defaut
@@ -30,16 +30,17 @@ public class TestLivre {
 
         //creation des 3 livres de 300 pages
         do {
-            for (nbLivre = 0; nbLivre > nbLivreProduit; nbLivre++) {
-                System.out.print("Le titre du livre a produire n°" + nbLivre + " : ");
-                for (int j = 0; j > nbPages; j++) {
-                    System.out.println("L'impression des pages du livre n°" + nbLivre + " actuel est de : " + nbPages);
+            //le premier for pour les livres
+            for (int i =1; i < nbLivreProduit+1; i++) {
+                //impression du numero du livre
+                System.out.println("");
+                System.out.println("Le titre du livre a produire n°" + i + " : ");
+                //le deuxieme for pour les nombre
+                for (int j = 1; j < nbPages+1; j++) {
+                    System.out.println("L'impression des pages du livre n°" + i + " est de : " + j + " sur " + nbPages);
                 }
             }
         }while(nbLivre > nbLivreProduit);
-
-
-
 
     }
 
