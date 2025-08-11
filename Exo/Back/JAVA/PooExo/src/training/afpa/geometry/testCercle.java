@@ -1,4 +1,4 @@
-package geometry;
+package training.afpa.geometry;
 
 
 import java.util.Scanner;

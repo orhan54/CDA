@@ -1,4 +1,4 @@
-package training.afpa.main;
+package training.afpa.App;
 
 import training.afpa.Exo1.TestCompte;
 

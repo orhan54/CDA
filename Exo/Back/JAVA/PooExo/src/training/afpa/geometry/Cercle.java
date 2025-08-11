@@ -1,6 +1,4 @@
-package geometry;
-
-import java.util.Scanner;
+package training.afpa.geometry;
 
 public class Cercle {
 
