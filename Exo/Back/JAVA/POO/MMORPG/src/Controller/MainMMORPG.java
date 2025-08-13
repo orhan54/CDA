@@ -7,16 +7,16 @@ import View.viewMMORPG;
 
 import java.util.Scanner;
 
+import static View.viewMMORPG.acceuilMMORPG;
+
 public class MainMMORPG {
 
     Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        viewMMORPG view = new viewMMORPG();
-        view.vueCreation();
+        acceuilMMORPG();
         MainMMORPG mainMMORPG = new MainMMORPG();
         mainMMORPG.run();
-
     }
 
     private boolean finProgramme = true;
@@ -27,13 +27,14 @@ public class MainMMORPG {
 
     //methode logique programme
     public void run(){
-        MainMMORPG mainMMORPG = new MainMMORPG();
-        mainMMORPG.choixMenu();
+        acceuilMMORPG();
+        viewMMORPG view = new viewMMORPG();
+        //choixMenu();
     }
 
     public void choixMenu(){
         System.out.println("Choisir le menu entre [1 et 4] : [0] pour quitter ");
-        System.out.println("1 - afficher tout les guerriers : ");
+        System.out.println("1 - afficher les guerriers : ");
         System.out.println("2 - afficher tout les voleurs : ");
         System.out.println("3 - afficher tout les soigneurs : ");
         System.out.println("4 - afficher tout les groupes : ");
@@ -45,7 +46,7 @@ public class MainMMORPG {
                 System.out.println("Vous avez quitter");
                 break;
             case 1:
-                viewMMORPG.afficherGerrier(Guerrier.getGuerriers());
+                viewMMORPG.afficherGuerrier(Guerrier.getGuerriers());
                 break;
             case 2:
                 viewMMORPG.afficherVoleurs(Voleur.getVoleurs());

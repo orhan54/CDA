@@ -61,4 +61,9 @@ public class Groupe {
     public void setSoigneur(Soigneur soigneur) {
         this.soigneur = soigneur;
     }
+
+    @Override
+    public String toString() {
+        return this.nom;
+    }
 }

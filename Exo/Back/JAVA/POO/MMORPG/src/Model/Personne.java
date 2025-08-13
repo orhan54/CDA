@@ -6,14 +6,16 @@ public class Personne {
     private String nom;
     private int ptv = 100;
     private int lvl = 1;
+    private String race;
     private String sexe;
 
     //constructeur de Personne
-    public Personne(String nom, int ptv, int lvl, String sexe) {
+    public Personne(String nom, int ptv, int lvl, String race, String sexe) {
         try{
             this.nom = nom;
             this.ptv = ptv;
             this.lvl = lvl;
+            this.race = race;
             this.sexe = sexe;
         }catch (Exception e){
             System.out.println("Erreur sur la classe mere Personne");
@@ -22,9 +24,10 @@ public class Personne {
     }
 
     //constructeur avec 2 param
-    public Personne(String nom, String sexe) {
+    public Personne(String nom, String race, String sexe) {
         try{
             this.nom = nom;
+            this.race = race;
             this.sexe = sexe;
         }catch (Exception e){
             System.out.println("Erreur sur la classe Personne");
@@ -56,6 +59,18 @@ public class Personne {
         this.lvl = lvl;
     }
 
+    public void setRace(String race) {
+        this.race = race;
+    }
+
+    public String getRace() {
+        return this.race;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
     public String getSexe() {
         return this.sexe;
     }
@@ -66,6 +81,7 @@ public class Personne {
         personne.append("Nom : ").append(this.nom).append("\n");
         personne.append("Ptv : ").append(this.ptv).append("\n");
         personne.append("Lvl : ").append(this.lvl).append("\n");
+        personne.append("Race : ").append(this.race).append("\n");
         personne.append("Sexe : ").append(this.sexe).append("\n");
 
         return personne.toString();

@@ -12,14 +12,14 @@ public class Guerrier extends Personne{
     private static List<Guerrier> guerriers = new ArrayList<>();
 
     //construteur du gerrier
-    public Guerrier(String nom, int ptv, int lvl, String sexe) {
-        super(nom, ptv, lvl, sexe);
+    public Guerrier(String nom, int ptv, int lvl, String race, String sexe) {
+        super(nom, ptv, lvl, race, sexe);
         this.setPdf(pdf);
     }
 
     //constructeur avec 2 param de la classe mere
-    public Guerrier(String nom, String sexe, int pdf) {
-        super(nom, sexe);
+    public Guerrier(String nom, String race, String sexe, int pdf) {
+        super(nom, race, sexe);
         this.setPdf(pdf);
     }
 

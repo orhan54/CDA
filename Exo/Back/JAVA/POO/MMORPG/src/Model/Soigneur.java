@@ -10,14 +10,14 @@ public class Soigneur extends Personne {
     private static List<Soigneur> soigneurs = new ArrayList<Soigneur>();
 
     //constructeur pour le Soigneur
-    Soigneur(String nom, int ptv, int lvl, String sexe) {
-        super(nom, ptv, lvl, sexe);
+    Soigneur(String nom, int ptv, int lvl, String race, String sexe) {
+        super(nom, ptv, lvl, race, sexe);
         this.setPdm(pdm);
     }
 
     //constructeur avec 2 param de la classe mere
-    public Soigneur(String nom, String sexe, int pdm) {
-        super(nom, sexe);
+    public Soigneur(String nom, String race, String sexe, int pdm) {
+        super(nom, race, sexe);
         this.setPdm(pdm);
     }
 
