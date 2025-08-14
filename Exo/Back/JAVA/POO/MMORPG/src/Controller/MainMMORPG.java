@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Groupe;
 import Model.Guerrier;
 import Model.Soigneur;
 import Model.Voleur;
@@ -14,9 +15,12 @@ public class MainMMORPG {
     Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        acceuilMMORPG();
-        MainMMORPG mainMMORPG = new MainMMORPG();
-        mainMMORPG.run();
+        try{
+            MainMMORPG mainMMORPG = new MainMMORPG();
+            mainMMORPG.run();
+        }catch (Exception e){
+            System.out.println("Error au lancement du MMORPG" + e.getMessage());
+        }
     }
 
     private boolean finProgramme = true;
@@ -25,11 +29,10 @@ public class MainMMORPG {
         return finProgramme();
     }
 
-    //methode logique programme  
+    //methode logique programme
     public void run(){
+        initialisationMonde();
         acceuilMMORPG();
-        viewMMORPG view = new viewMMORPG();
-        //choixMenu();
     }
 
     public void choixMenu(){
@@ -61,6 +64,25 @@ public class MainMMORPG {
                 System.out.println("Erreur !");
                 break;
         }
+    }
+
+    public static void initialisationMonde(){
+        Guerrier g1 = new Guerrier("Conan", "humain", "homme", 1);
+        Guerrier.getGuerriers().add(g1);
+        Guerrier g2 = new Guerrier("Xena", "humain", "femme", 1);
+        Guerrier.getGuerriers().add(g2);
+        Voleur v1 = new Voleur("Marco", "elfe", "homme", 1);
+        Voleur.getVoleurs().add(v1);
+        Voleur v2 = new Voleur("Mouly", "goblin", "homme", 1);
+        Voleur.getVoleurs().add(v2);
+        Soigneur s1 = new Soigneur("Dafal", "humain", "femme", 1);
+        Soigneur.getSoigneurs().add(s1);
+        Soigneur s2 = new Soigneur("Parace", "orc", "femme", 1);
+        Soigneur.getSoigneurs().add(s2);
+
+        Groupe grp1 = new Groupe("Les ouff", "Conan", "Marco", "Dafal");
+        //Groupe grp1 = new Groupe("Les ouff", "Conan", "Marco", "Dafal");
+        Groupe.getGroupes().add(grp1);
     }
 
 }

@@ -5,7 +5,6 @@ import Model.Guerrier;
 import Model.Soigneur;
 import Model.Voleur;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -40,18 +39,44 @@ public class viewMMORPG {
             System.out.println("");
             System.out.println("              [ ---   Bienvenue dans le nouveau MMORPG AFPA   --- ]");
             System.out.println("");
-            System.out.println("Choisir une option entre : [1-3]");
-            System.out.println("1 - Créer un personnage : ");
-            System.out.println("2 - Option :");
-            System.out.println("3 - Exit");
+            System.out.println("Choisir une option entre : [1-4]");
+            System.out.println("1 - Jouer : ");
+            System.out.println("2 - Créer un personnage : ");
+            System.out.println("3 - Option :");
+            System.out.println("4 - Exit");
 
             int choixMenu = sc.nextInt();// lecture du choix Menu
 
-            if (choixMenu == 1) {
-                vueCreation();
+            if(choixMenu == 1){
+                System.out.println("");
+                System.out.println("1 - En Solo : ");
+                System.out.println("2 - En groupe : ");
+                String choixModeJeu = sc.next();
+                switch (choixModeJeu) {
+                    case "1":
+                        System.out.println("Vous entrez en jeu =)  bonne chance ");
+                        System.out.println("Saisir [0] pour revenir au menu : ");
+                        int retourSolo = sc.nextInt();
+                        if(retourSolo == 0){
+                            acceuilMMORPG();
+                        }
+                        break;
+                    case "2":
+                        System.out.println("");
+                        System.out.println("Le groupe se crée  =)  bonne chance ");
+                        afficherGroupe();
+                        System.out.println("Saisir [0] pour revenir au menu : ");
+                        int retourGroupe = sc.nextInt();
+                        if(retourGroupe == 0){
+                            acceuilMMORPG();
+                        }
+                        break;
+                }
             }else if (choixMenu == 2) {
-                vueOption();
+                vueCreation();
             }else if (choixMenu == 3) {
+                vueOption();
+            }else if (choixMenu == 4) {
                 System.exit(0);
             }
         }catch(Exception e){
@@ -65,9 +90,9 @@ public class viewMMORPG {
         try {
                 System.out.println("              [ ---   Création du personnage AFPA   --- ]");
                 System.out.println("");
+                sc.nextLine();
                 System.out.println("Veuillez choisir votre nom : ");
                 nom = sc.nextLine().toLowerCase();
-                sc.nextLine();
                 System.out.println("Veuillez choisir votre classe : ");
                 classe = sc.nextLine().toLowerCase();
                 System.out.println("Veuillez choisir votre race : ");
@@ -99,10 +124,10 @@ public class viewMMORPG {
         try {
             System.out.println("Veuillez choisir une option : ");
             System.out.println("");
-            System.out.println("1 - Voir tout les peronnages d'une classe : ");
-            System.out.println("2 - Recheche un personnage : ");
-            System.out.println("3 - Supprime un personnage : ");
-            System.out.println("4 - Information sur le personnage : ");
+            System.out.println("1 - Voir les peronnages d'une classe : ");
+            System.out.println("2 - Voir les groupes : ");
+            System.out.println("3 - Recheche un personnage : ");
+            System.out.println("4 - Supprime un personnage : ");
 
             int choixOPtion = sc.nextInt();
             if (choixOPtion == 1) {
@@ -131,6 +156,7 @@ public class viewMMORPG {
             if (choixOPtion == 2) {
                 System.out.println("Saisir le nom du personnage a rechercher : ");
                 nom = sc.nextLine();
+                afficherGroupe();
             }
             if (choixOPtion == 3) {
                 System.out.println("Supprimer un personnage : ");
@@ -140,7 +166,6 @@ public class viewMMORPG {
                 System.out.println("Information sur le personnage : ");
                 nom = sc.nextLine();
             }
-
 
         }catch(Exception e){
             System.out.println("erreur au lancement de l'option !!!!");

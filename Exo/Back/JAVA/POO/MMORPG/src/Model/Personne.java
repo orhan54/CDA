@@ -20,7 +20,6 @@ public class Personne {
         }catch (Exception e){
             System.out.println("Erreur sur la classe mere Personne");
         }
-
     }
 
     //constructeur avec 2 param

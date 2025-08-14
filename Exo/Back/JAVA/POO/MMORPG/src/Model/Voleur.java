@@ -36,8 +36,10 @@ public class Voleur extends Personne {
 
     @Override
     public String toString() {
+        System.out.println("===========================================================");
         return super.toString()
                 + "Agilite : "+ this.getPagi();
+
     }
 
 }

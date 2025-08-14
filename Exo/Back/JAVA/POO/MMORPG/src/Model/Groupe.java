@@ -12,12 +12,12 @@ public class Groupe {
 
     private static List<Groupe> groupes = new ArrayList<Groupe>();
 
-    public Groupe(String nom, Guerrier guerrier,  Voleur voleur, Soigneur soigneur) {
+    public Groupe(String nom, String guerrier, String voleur, String soigneur) {
         try{
             this.nom = nom;
-            this.guerrier = guerrier;
-            this.voleur = voleur;
-            this.soigneur = soigneur;
+            this.guerrier = getGuerrier(nom);
+            this.voleur = getVoleur(nom);
+            this.soigneur = getSoigneur(nom);
         }catch(Exception e){
             System.out.println("Erreur Groupe "+e.getMessage());
         }
@@ -38,7 +38,7 @@ public class Groupe {
         this.nom = nom;
     }
 
-    public Guerrier getGuerrier() {
+    public Guerrier getGuerrier(String nom) {
         return this.guerrier;
     }
 
@@ -46,7 +46,7 @@ public class Groupe {
         this.guerrier = guerrier;
     }
 
-    public Voleur getVoleur() {
+    public Voleur getVoleur(String nom) {
         return this.voleur;
     }
 
@@ -54,7 +54,7 @@ public class Groupe {
         this.voleur = voleur;
     }
 
-    public Soigneur getSoigneur() {
+    public Soigneur getSoigneur(String nom) {
         return this.soigneur;
     }
 
@@ -64,6 +64,10 @@ public class Groupe {
 
     @Override
     public String toString() {
+        this.setNom(this.nom);
+        this.setGuerrier(this.guerrier);
+        this.setVoleur(this.voleur);
+        this.setSoigneur(this.soigneur);
         return this.nom;
     }
 }
