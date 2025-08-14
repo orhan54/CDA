@@ -25,7 +25,7 @@ public class MainMMORPG {
         return finProgramme();
     }
 
-    //methode logique programme
+    //methode logique programme  
     public void run(){
         acceuilMMORPG();
         viewMMORPG view = new viewMMORPG();
