@@ -21,6 +21,11 @@ public class Voleur extends Personne {
         this.setPagi(pagi);
     }
 
+    public Voleur(String nom) {
+        super(nom, "elfe", "homme");
+        this.setPagi(pagi);
+    }
+
     public static List<Voleur> getVoleurs() {
         return voleurs;
     }

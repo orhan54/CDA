@@ -23,6 +23,11 @@ public class Guerrier extends Personne{
         this.setPdf(pdf);
     }
 
+    public Guerrier(String nom) {
+        super(nom, "humain", "homme");
+        this.setPdf(pdf);
+    }
+
     public static List<Guerrier> getGuerriers() {
         return guerriers;
     }
@@ -38,7 +43,8 @@ public class Guerrier extends Personne{
 
     @Override
     public String toString() {
-        return super.toString() + " "
+        System.out.println("===========================================================");
+        return super.toString() + "Force : "
                 + this.getPdf();
     }
 }

@@ -81,7 +81,6 @@ public class MainMMORPG {
         Soigneur.getSoigneurs().add(s2);
 
         Groupe grp1 = new Groupe("Les ouff", "Conan", "Marco", "Dafal");
-        //Groupe grp1 = new Groupe("Les ouff", "Conan", "Marco", "Dafal");
         Groupe.getGroupes().add(grp1);
     }
 

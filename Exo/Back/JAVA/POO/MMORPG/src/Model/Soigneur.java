@@ -21,6 +21,11 @@ public class Soigneur extends Personne {
         this.setPdm(pdm);
     }
 
+    public Soigneur(String nom) {
+        super(nom, "roc", "femme");
+        this.setPdm(pdm);
+    }
+
     public static List<Soigneur> getSoigneurs() {
         return soigneurs;
     }
@@ -36,7 +41,8 @@ public class Soigneur extends Personne {
 
     @Override
     public String toString() {
-        return super.toString() + " "
+        System.out.println("===========================================================");
+        return super.toString() + "Point de magie : "
                 + this.getPdm();
     }
 

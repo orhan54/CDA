@@ -1,5 +1,9 @@
 package Model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 public class Personne {
 
     //attributs de Personne
@@ -8,6 +12,7 @@ public class Personne {
     private int lvl = 1;
     private String race;
     private String sexe;
+    private LocalDateTime dateCreation;
 
     //constructeur de Personne
     public Personne(String nom, int ptv, int lvl, String race, String sexe) {
@@ -17,6 +22,7 @@ public class Personne {
             this.lvl = lvl;
             this.race = race;
             this.sexe = sexe;
+            this.dateCreation = LocalDateTime.now();
         }catch (Exception e){
             System.out.println("Erreur sur la classe mere Personne");
         }
@@ -28,6 +34,7 @@ public class Personne {
             this.nom = nom;
             this.race = race;
             this.sexe = sexe;
+            this.dateCreation = LocalDateTime.now();
         }catch (Exception e){
             System.out.println("Erreur sur la classe Personne");
         }
@@ -74,14 +81,23 @@ public class Personne {
         return this.sexe;
     }
 
+    public LocalDateTime getDateCreation() { return this.dateCreation; }
+
+    // Retourne la date formatée
+    public String getDateCreationFormatee() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy 'à' HH:mm");
+        return dateCreation.format(formatter);
+    }
+
     @Override
     public String toString() {
         StringBuilder personne = new StringBuilder();
-        personne.append("Nom : ").append(this.nom).append("\n");
+        personne.append("").append(this.nom).append("\n");
         personne.append("Ptv : ").append(this.ptv).append("\n");
         personne.append("Lvl : ").append(this.lvl).append("\n");
         personne.append("Race : ").append(this.race).append("\n");
         personne.append("Sexe : ").append(this.sexe).append("\n");
+        personne.append("Créé le : ").append(getDateCreationFormatee()).append("\n");
 
         return personne.toString();
     }

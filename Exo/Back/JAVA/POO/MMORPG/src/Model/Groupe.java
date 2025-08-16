@@ -15,9 +15,9 @@ public class Groupe {
     public Groupe(String nom, String guerrier, String voleur, String soigneur) {
         try{
             this.nom = nom;
-            this.guerrier = getGuerrier(nom);
-            this.voleur = getVoleur(nom);
-            this.soigneur = getSoigneur(nom);
+            this.guerrier = new Guerrier(guerrier);
+            this.voleur = new Voleur(voleur);
+            this.soigneur = new Soigneur(soigneur);
         }catch(Exception e){
             System.out.println("Erreur Groupe "+e.getMessage());
         }
@@ -64,10 +64,12 @@ public class Groupe {
 
     @Override
     public String toString() {
-        this.setNom(this.nom);
-        this.setGuerrier(this.guerrier);
-        this.setVoleur(this.voleur);
-        this.setSoigneur(this.soigneur);
-        return this.nom;
+        return "Groupe: " + nom + "\n" +
+                "Guerrier: " + guerrier + "\n" +
+                "=====================================================================" + "\n" +
+                "Voleur: " + voleur + "\n" +
+                "=====================================================================" + "\n" +
+                "Soigneur: " + soigneur + "\n" +
+                "=====================================================================";
     }
 }
